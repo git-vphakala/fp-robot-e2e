@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.8.1 on win32)" generated="20200130 13:46:03.607" rpa="false">
+<suite id="s1" name="Findpairs Test" source="C:\Users\VP\gitwa\robot_study\fp_e2e_test\findpairs_test.robot">
+<test id="s1-t1" name="Findpairs">
+<kw name="Open Browsers To Findpairs">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${FINDPAIRS URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>alias=player1</arg>
+</arguments>
+<msg timestamp="20200130 13:46:03.838" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/findpairs/'.</msg>
+<status status="PASS" starttime="20200130 13:46:03.838" endtime="20200130 13:46:09.096"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${FINDPAIRS URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>alias=player2</arg>
+</arguments>
+<msg timestamp="20200130 13:46:09.098" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/findpairs/'.</msg>
+<status status="PASS" starttime="20200130 13:46:09.096" endtime="20200130 13:46:14.968"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:03.837" endtime="20200130 13:46:14.968"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>&amp;{browserMap}</var>
+</assign>
+<msg timestamp="20200130 13:46:14.976" level="INFO">&amp;{browserMap} = { }</msg>
+<status status="PASS" starttime="20200130 13:46:14.975" endtime="20200130 13:46:14.976"></status>
+</kw>
+<kw name="Sign In">
+<arguments>
+<arg>Veera</arg>
+<arg>player1</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browser}</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:14.977" endtime="20200130 13:46:14.978"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${FINDPAIRS URL}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:15.017" level="INFO">Current location is 'http://127.0.0.1:8000/findpairs/'.</msg>
+<status status="PASS" starttime="20200130 13:46:14.978" endtime="20200130 13:46:15.017"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input.name</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:15.018" level="INFO">Typing text 'Veera' into text field 'css:input.name'.</msg>
+<status status="PASS" starttime="20200130 13:46:15.018" endtime="20200130 13:46:15.293"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:i.fa.fa-sign-in</arg>
+</arguments>
+<msg timestamp="20200130 13:46:15.293" level="INFO">Clicking element 'css:i.fa.fa-sign-in'.</msg>
+<status status="PASS" starttime="20200130 13:46:15.293" endtime="20200130 13:46:15.394"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${browserMap}</arg>
+<arg>${user}=${browser}</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:15.394" endtime="20200130 13:46:15.395"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:14.976" endtime="20200130 13:46:15.396"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+<arg>Let browser render the page</arg>
+</arguments>
+<msg timestamp="20200130 13:46:18.412" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20200130 13:46:18.412" level="INFO">Let browser render the page</msg>
+<status status="PASS" starttime="20200130 13:46:15.400" endtime="20200130 13:46:18.412"></status>
+</kw>
+<kw name="Create Game">
+<arguments>
+<arg>${level-easy}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${level}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:18.413" level="INFO">Clicking element 'css:div.select-level-row &gt; span.spruit-field &gt; span:nth-child(2) &gt; span'.</msg>
+<status status="PASS" starttime="20200130 13:46:18.413" endtime="20200130 13:46:18.489"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${create-game-button}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:18.490" level="INFO">Clicking element 'css:div.c-game &gt; button'.</msg>
+<status status="PASS" starttime="20200130 13:46:18.489" endtime="20200130 13:46:18.553"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:18.412" endtime="20200130 13:46:18.554"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+<arg>Let server create the game and browser to render it</arg>
+</arguments>
+<msg timestamp="20200130 13:46:21.556" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20200130 13:46:21.556" level="INFO">Let server create the game and browser to render it</msg>
+<status status="PASS" starttime="20200130 13:46:18.554" endtime="20200130 13:46:21.557"></status>
+</kw>
+<kw name="Join Game">
+<arguments>
+<arg>${first-game}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${game}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:21.561" level="INFO">Clicking element 'css:div.online &gt; div:nth-child(4) &gt; button'.</msg>
+<status status="PASS" starttime="20200130 13:46:21.560" endtime="20200130 13:46:21.618"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:21.558" endtime="20200130 13:46:21.618"></status>
+</kw>
+<kw name="Sign In">
+<arguments>
+<arg>Helmi</arg>
+<arg>player2</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browser}</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:21.619" endtime="20200130 13:46:21.620"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${FINDPAIRS URL}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:21.626" level="INFO">Current location is 'http://127.0.0.1:8000/findpairs/'.</msg>
+<status status="PASS" starttime="20200130 13:46:21.620" endtime="20200130 13:46:21.626"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>css:input.name</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:21.626" level="INFO">Typing text 'Helmi' into text field 'css:input.name'.</msg>
+<status status="PASS" starttime="20200130 13:46:21.626" endtime="20200130 13:46:21.732"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:i.fa.fa-sign-in</arg>
+</arguments>
+<msg timestamp="20200130 13:46:21.733" level="INFO">Clicking element 'css:i.fa.fa-sign-in'.</msg>
+<status status="PASS" starttime="20200130 13:46:21.732" endtime="20200130 13:46:21.808"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${browserMap}</arg>
+<arg>${user}=${browser}</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:21.809" endtime="20200130 13:46:21.809"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:21.619" endtime="20200130 13:46:21.810"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+<arg>Let browser render the page</arg>
+</arguments>
+<msg timestamp="20200130 13:46:24.812" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20200130 13:46:24.812" level="INFO">Let browser render the page</msg>
+<status status="PASS" starttime="20200130 13:46:21.811" endtime="20200130 13:46:24.812"></status>
+</kw>
+<kw name="Join Game">
+<arguments>
+<arg>${first-game}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${game}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:24.818" level="INFO">Clicking element 'css:div.online &gt; div:nth-child(4) &gt; button'.</msg>
+<status status="PASS" starttime="20200130 13:46:24.817" endtime="20200130 13:46:24.875"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:24.815" endtime="20200130 13:46:24.875"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+<arg>Let browser render before Study Turns</arg>
+</arguments>
+<msg timestamp="20200130 13:46:27.877" level="INFO">Slept 3 seconds</msg>
+<msg timestamp="20200130 13:46:27.877" level="INFO">Let browser render before Study Turns</msg>
+<status status="PASS" starttime="20200130 13:46:24.876" endtime="20200130 13:46:27.877"></status>
+</kw>
+<kw name="Study Turns">
+<assign>
+<var>@{turns}</var>
+</assign>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let cards = [];</arg>
+<arg>document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach(elem =&gt; cards.push(elem.className));</arg>
+<arg>cards = cards.map((classes, i) =&gt; ({classes:classes, position:i}));</arg>
+<arg>cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));</arg>
+<arg>console.log("Get Turns", cards);</arg>
+<arg>return cards;</arg>
+</arguments>
+<assign>
+<var>@{local turns}</var>
+</assign>
+<msg timestamp="20200130 13:46:27.882" level="INFO">Executing JavaScript:
+let cards = [];document.querySelectorAll("div.board span.card &gt; label &gt; i").forEach(elem =&gt; cards.push(elem.className));cards = cards.map((classes, i) =&gt; ({classes:classes, position:i}));cards = cards.sort((a, b) =&gt; a.classes.localeCompare(b.classes));console.log("Get Turns", cards);return cards;
+Without any arguments.</msg>
+<msg timestamp="20200130 13:46:27.895" level="INFO">@{local turns} = [ {'classes': 'fa fa-android', 'position': 1} | {'classes': 'fa fa-android', 'position': 8} | {'classes': 'fa fa-fort-awesome', 'position': 0} | {'classes': 'fa fa-fort-awesome', 'position': 4} | {'cl...</msg>
+<status status="PASS" starttime="20200130 13:46:27.880" endtime="20200130 13:46:27.895"></status>
+</kw>
+<msg timestamp="20200130 13:46:27.895" level="INFO">@{turns} = [ {'classes': 'fa fa-android', 'position': 1} | {'classes': 'fa fa-android', 'position': 8} | {'classes': 'fa fa-fort-awesome', 'position': 0} | {'classes': 'fa fa-fort-awesome', 'position': 4} | {'cl...</msg>
+<status status="PASS" starttime="20200130 13:46:27.879" endtime="20200130 13:46:27.895"></status>
+</kw>
+<kw name="Do Turns">
+<arguments>
+<arg>${turns}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="${turn} IN [ @{turns} ]" type="for">
+<kw name="${turn} = {'classes': 'fa fa-android', 'position': 1}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:27.921" level="INFO">${user} = Helmi</msg>
+<status status="PASS" starttime="20200130 13:46:27.898" endtime="20200130 13:46:27.921"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:27.921" endtime="20200130 13:46:27.921"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:27.922" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:27.922" endtime="20200130 13:46:27.922"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:27.923" level="INFO">${nthchild} = 4</msg>
+<status status="PASS" starttime="20200130 13:46:27.922" endtime="20200130 13:46:27.923"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:27.923" level="INFO">${nthchild} = 4</msg>
+<status status="PASS" starttime="20200130 13:46:27.923" endtime="20200130 13:46:27.923"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:27.924" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(4)</msg>
+<status status="PASS" starttime="20200130 13:46:27.923" endtime="20200130 13:46:27.924"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:27.924" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(4)'.</msg>
+<status status="PASS" starttime="20200130 13:46:27.924" endtime="20200130 13:46:27.971"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:30.971" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:27.971" endtime="20200130 13:46:30.971"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:27.897" endtime="20200130 13:46:30.972"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:27.897" endtime="20200130 13:46:30.972"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-android', 'position': 8}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:31.006" level="INFO">${user} = Helmi</msg>
+<status status="PASS" starttime="20200130 13:46:30.974" endtime="20200130 13:46:31.006"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:31.006" endtime="20200130 13:46:31.007"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:31.007" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:31.007" endtime="20200130 13:46:31.007"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:31.008" level="INFO">${nthchild} = 11</msg>
+<status status="PASS" starttime="20200130 13:46:31.007" endtime="20200130 13:46:31.008"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:31.008" level="INFO">${nthchild} = 11</msg>
+<status status="PASS" starttime="20200130 13:46:31.008" endtime="20200130 13:46:31.008"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:31.008" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(11)</msg>
+<status status="PASS" starttime="20200130 13:46:31.008" endtime="20200130 13:46:31.008"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:31.009" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(11)'.</msg>
+<status status="PASS" starttime="20200130 13:46:31.009" endtime="20200130 13:46:31.056"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:34.057" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:31.056" endtime="20200130 13:46:34.057"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:30.973" endtime="20200130 13:46:34.058"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:30.972" endtime="20200130 13:46:34.058"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-fort-awesome', 'position': 0}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:34.092" level="INFO">${user} = Veera</msg>
+<status status="PASS" starttime="20200130 13:46:34.060" endtime="20200130 13:46:34.092"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:34.092" endtime="20200130 13:46:34.092"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:34.093" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:34.092" endtime="20200130 13:46:34.093"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:34.093" level="INFO">${nthchild} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:34.093" endtime="20200130 13:46:34.093"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:34.094" level="INFO">${nthchild} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:34.094" endtime="20200130 13:46:34.094"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:34.095" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(3)</msg>
+<status status="PASS" starttime="20200130 13:46:34.094" endtime="20200130 13:46:34.095"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:34.095" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(3)'.</msg>
+<status status="PASS" starttime="20200130 13:46:34.095" endtime="20200130 13:46:34.144"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:37.147" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:34.145" endtime="20200130 13:46:37.147"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:34.058" endtime="20200130 13:46:37.147"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:34.058" endtime="20200130 13:46:37.147"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-fort-awesome', 'position': 4}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:37.167" level="INFO">${user} = Veera</msg>
+<status status="PASS" starttime="20200130 13:46:37.147" endtime="20200130 13:46:37.167"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:37.167" endtime="20200130 13:46:37.168"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:37.168" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:37.168" endtime="20200130 13:46:37.168"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:37.169" level="INFO">${nthchild} = 7</msg>
+<status status="PASS" starttime="20200130 13:46:37.169" endtime="20200130 13:46:37.169"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:37.170" level="INFO">${nthchild} = 7</msg>
+<status status="PASS" starttime="20200130 13:46:37.169" endtime="20200130 13:46:37.170"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:37.171" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(7)</msg>
+<status status="PASS" starttime="20200130 13:46:37.170" endtime="20200130 13:46:37.171"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:37.172" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(7)'.</msg>
+<status status="PASS" starttime="20200130 13:46:37.171" endtime="20200130 13:46:37.218"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:40.220" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:37.219" endtime="20200130 13:46:40.220"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:37.147" endtime="20200130 13:46:40.221"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:37.147" endtime="20200130 13:46:40.221"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-github', 'position': 7}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:40.239" level="INFO">${user} = Helmi</msg>
+<status status="PASS" starttime="20200130 13:46:40.223" endtime="20200130 13:46:40.239"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:40.239" endtime="20200130 13:46:40.239"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:40.240" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:40.240" endtime="20200130 13:46:40.240"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:40.240" level="INFO">${nthchild} = 10</msg>
+<status status="PASS" starttime="20200130 13:46:40.240" endtime="20200130 13:46:40.240"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:40.240" level="INFO">${nthchild} = 10</msg>
+<status status="PASS" starttime="20200130 13:46:40.240" endtime="20200130 13:46:40.240"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:40.241" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(10)</msg>
+<status status="PASS" starttime="20200130 13:46:40.241" endtime="20200130 13:46:40.241"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:40.241" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(10)'.</msg>
+<status status="PASS" starttime="20200130 13:46:40.241" endtime="20200130 13:46:40.287"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:43.288" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:40.287" endtime="20200130 13:46:43.288"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:40.221" endtime="20200130 13:46:43.288"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:40.221" endtime="20200130 13:46:43.288"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-github', 'position': 9}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:43.304" level="INFO">${user} = Helmi</msg>
+<status status="PASS" starttime="20200130 13:46:43.288" endtime="20200130 13:46:43.304"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:43.304" endtime="20200130 13:46:43.305"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:43.305" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:43.305" endtime="20200130 13:46:43.305"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:43.306" level="INFO">${nthchild} = 12</msg>
+<status status="PASS" starttime="20200130 13:46:43.305" endtime="20200130 13:46:43.306"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:43.306" level="INFO">${nthchild} = 12</msg>
+<status status="PASS" starttime="20200130 13:46:43.306" endtime="20200130 13:46:43.306"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:43.307" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(12)</msg>
+<status status="PASS" starttime="20200130 13:46:43.306" endtime="20200130 13:46:43.307"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:43.307" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(12)'.</msg>
+<status status="PASS" starttime="20200130 13:46:43.307" endtime="20200130 13:46:43.367"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:46.368" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:43.367" endtime="20200130 13:46:46.368"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:43.288" endtime="20200130 13:46:46.368"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:43.288" endtime="20200130 13:46:46.368"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-google', 'position': 3}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:46.390" level="INFO">${user} = Veera</msg>
+<status status="PASS" starttime="20200130 13:46:46.369" endtime="20200130 13:46:46.390"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:46.390" endtime="20200130 13:46:46.391"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:46.392" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:46.391" endtime="20200130 13:46:46.392"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:46.393" level="INFO">${nthchild} = 6</msg>
+<status status="PASS" starttime="20200130 13:46:46.392" endtime="20200130 13:46:46.393"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:46.393" level="INFO">${nthchild} = 6</msg>
+<status status="PASS" starttime="20200130 13:46:46.393" endtime="20200130 13:46:46.393"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:46.394" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(6)</msg>
+<status status="PASS" starttime="20200130 13:46:46.394" endtime="20200130 13:46:46.394"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:46.395" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(6)'.</msg>
+<status status="PASS" starttime="20200130 13:46:46.394" endtime="20200130 13:46:46.445"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:49.446" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:46.445" endtime="20200130 13:46:49.446"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:46.368" endtime="20200130 13:46:49.446"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:46.368" endtime="20200130 13:46:49.446"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-google', 'position': 5}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:49.475" level="INFO">${user} = Veera</msg>
+<status status="PASS" starttime="20200130 13:46:49.448" endtime="20200130 13:46:49.475"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:49.475" endtime="20200130 13:46:49.476"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:49.476" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:49.476" endtime="20200130 13:46:49.476"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:49.477" level="INFO">${nthchild} = 8</msg>
+<status status="PASS" starttime="20200130 13:46:49.477" endtime="20200130 13:46:49.477"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:49.477" level="INFO">${nthchild} = 8</msg>
+<status status="PASS" starttime="20200130 13:46:49.477" endtime="20200130 13:46:49.478"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:49.478" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(8)</msg>
+<status status="PASS" starttime="20200130 13:46:49.478" endtime="20200130 13:46:49.478"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:49.478" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(8)'.</msg>
+<status status="PASS" starttime="20200130 13:46:49.478" endtime="20200130 13:46:49.533"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:52.534" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:49.533" endtime="20200130 13:46:52.534"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:49.447" endtime="20200130 13:46:52.534"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:49.447" endtime="20200130 13:46:52.534"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-youtube-play', 'position': 2}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:52.554" level="INFO">${user} = Helmi</msg>
+<status status="PASS" starttime="20200130 13:46:52.535" endtime="20200130 13:46:52.554"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:52.555" endtime="20200130 13:46:52.555"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:52.555" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:52.555" endtime="20200130 13:46:52.556"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:52.556" level="INFO">${nthchild} = 5</msg>
+<status status="PASS" starttime="20200130 13:46:52.556" endtime="20200130 13:46:52.556"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:52.557" level="INFO">${nthchild} = 5</msg>
+<status status="PASS" starttime="20200130 13:46:52.556" endtime="20200130 13:46:52.557"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:52.557" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(5)</msg>
+<status status="PASS" starttime="20200130 13:46:52.557" endtime="20200130 13:46:52.557"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:52.558" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(5)'.</msg>
+<status status="PASS" starttime="20200130 13:46:52.557" endtime="20200130 13:46:52.615"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:55.616" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:52.615" endtime="20200130 13:46:55.616"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:52.534" endtime="20200130 13:46:55.616"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:52.534" endtime="20200130 13:46:55.616"></status>
+</kw>
+<kw name="${turn} = {'classes': 'fa fa-youtube-play', 'position': 6}" type="foritem">
+<kw name="Turn One Card">
+<arguments>
+<arg>${turn}</arg>
+<arg>${browserMap}</arg>
+</arguments>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>css:div.board div.header span.turn.active</arg>
+<arg>innerHTML</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20200130 13:46:55.630" level="INFO">${user} = Helmi</msg>
+<status status="PASS" starttime="20200130 13:46:55.617" endtime="20200130 13:46:55.631"></status>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<arguments>
+<arg>${browserMap}[${user}]</arg>
+</arguments>
+<status status="PASS" starttime="20200130 13:46:55.631" endtime="20200130 13:46:55.631"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<assign>
+<var>${base}</var>
+</assign>
+<msg timestamp="20200130 13:46:55.632" level="INFO">${base} = 3</msg>
+<status status="PASS" starttime="20200130 13:46:55.632" endtime="20200130 13:46:55.632"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${base} + ${turn}[position]</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:55.633" level="INFO">${nthchild} = 9</msg>
+<status status="PASS" starttime="20200130 13:46:55.632" endtime="20200130 13:46:55.633"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${nthchild}</arg>
+</arguments>
+<assign>
+<var>${nthchild}</var>
+</assign>
+<msg timestamp="20200130 13:46:55.634" level="INFO">${nthchild} = 9</msg>
+<status status="PASS" starttime="20200130 13:46:55.633" endtime="20200130 13:46:55.634"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>div.board &gt; span &gt; span:nth-child(${nthchild})</arg>
+</arguments>
+<assign>
+<var>${cardSelector}</var>
+</assign>
+<msg timestamp="20200130 13:46:55.634" level="INFO">${cardSelector} = div.board &gt; span &gt; span:nth-child(9)</msg>
+<status status="PASS" starttime="20200130 13:46:55.634" endtime="20200130 13:46:55.634"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css:${cardSelector}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:55.635" level="INFO">Clicking element 'css:div.board &gt; span &gt; span:nth-child(9)'.</msg>
+<status status="PASS" starttime="20200130 13:46:55.635" endtime="20200130 13:46:55.683"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200130 13:46:58.685" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200130 13:46:55.683" endtime="20200130 13:46:58.685"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:55.616" endtime="20200130 13:46:58.686"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:55.616" endtime="20200130 13:46:58.686"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:27.896" endtime="20200130 13:46:58.686"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:27.895" endtime="20200130 13:46:58.686"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>3</arg>
+<arg>2</arg>
+</arguments>
+<assign>
+<var>@{scoreByPairs}</var>
+</assign>
+<msg timestamp="20200130 13:46:58.688" level="INFO">@{scoreByPairs} = [ 3 | 2 ]</msg>
+<status status="PASS" starttime="20200130 13:46:58.688" endtime="20200130 13:46:58.690"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>Helmi</arg>
+<arg>Veera</arg>
+</arguments>
+<assign>
+<var>@{scoreByUsers}</var>
+</assign>
+<msg timestamp="20200130 13:46:58.691" level="INFO">@{scoreByUsers} = [ Helmi | Veera ]</msg>
+<status status="PASS" starttime="20200130 13:46:58.690" endtime="20200130 13:46:58.691"></status>
+</kw>
+<kw name="Score Should Be">
+<arguments>
+<arg>${scoreByPairs}</arg>
+<arg>${scoreByUsers}</arg>
+</arguments>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let scoreByUsers = [];</arg>
+<arg>document.querySelectorAll("table &gt; tbody &gt; tr &gt; td:nth-child(2)").forEach(elem =&gt; scoreByUsers.push(elem.innerText));</arg>
+<arg>console.log("Score Should Be by users", scoreByUsers);</arg>
+<arg>return scoreByUsers;</arg>
+</arguments>
+<assign>
+<var>@{scoreByUsers}</var>
+</assign>
+<msg timestamp="20200130 13:46:58.699" level="INFO">Executing JavaScript:
+let scoreByUsers = [];document.querySelectorAll("table &gt; tbody &gt; tr &gt; td:nth-child(2)").forEach(elem =&gt; scoreByUsers.push(elem.innerText));console.log("Score Should Be by users", scoreByUsers);return scoreByUsers;
+Without any arguments.</msg>
+<msg timestamp="20200130 13:46:58.709" level="INFO">@{scoreByUsers} = [ Helmi | Veera ]</msg>
+<status status="PASS" starttime="20200130 13:46:58.695" endtime="20200130 13:46:58.709"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>let scoreByPairs = [];</arg>
+<arg>document.querySelectorAll("table &gt; tbody &gt; tr &gt; td:nth-child(3)").forEach(elem =&gt; scoreByPairs.push(elem.innerText));</arg>
+<arg>console.log("Score Should Be by pairs", scoreByPairs);</arg>
+<arg>return scoreByPairs;</arg>
+</arguments>
+<assign>
+<var>@{scoreByPairs}</var>
+</assign>
+<msg timestamp="20200130 13:46:58.711" level="INFO">Executing JavaScript:
+let scoreByPairs = [];document.querySelectorAll("table &gt; tbody &gt; tr &gt; td:nth-child(3)").forEach(elem =&gt; scoreByPairs.push(elem.innerText));console.log("Score Should Be by pairs", scoreByPairs);return scoreByPairs;
+Without any arguments.</msg>
+<msg timestamp="20200130 13:46:58.719" level="INFO">@{scoreByPairs} = [ 3 | 2 ]</msg>
+<status status="PASS" starttime="20200130 13:46:58.710" endtime="20200130 13:46:58.720"></status>
+</kw>
+<kw name="Check Scores" library="FindPairsTestLibrary">
+<arguments>
+<arg>${scoreByUsers}</arg>
+<arg>${expectedScoreByUsers}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:58.720" level="INFO">['Helmi', 'Veera'] ['Helmi', 'Veera']</msg>
+<status status="PASS" starttime="20200130 13:46:58.720" endtime="20200130 13:46:58.720"></status>
+</kw>
+<kw name="Check Scores" library="FindPairsTestLibrary">
+<arguments>
+<arg>${scoreByPairs}</arg>
+<arg>${expectedScoreByPairs}</arg>
+</arguments>
+<msg timestamp="20200130 13:46:58.720" level="INFO">['3', '2'] ['3', '2']</msg>
+<status status="PASS" starttime="20200130 13:46:58.720" endtime="20200130 13:46:58.720"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:58.692" endtime="20200130 13:46:58.721"></status>
+</kw>
+<status status="PASS" starttime="20200130 13:46:03.836" endtime="20200130 13:46:58.721" critical="yes"></status>
+</test>
+<doc>Findpairs end to end testing.
+This test assumes that Findpairs Users contains Helmi and Veera.</doc>
+<status status="PASS" starttime="20200130 13:46:03.608" endtime="20200130 13:46:58.723"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Findpairs Test">Findpairs Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
